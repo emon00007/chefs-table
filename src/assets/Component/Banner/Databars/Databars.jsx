@@ -14,7 +14,6 @@ const Databars = ({handelarAddCut}) => {
     return (
       
             <div className="w-2/3">
-            <h2>slaide bar</h2>
               <div className='grid grid-cols-2 gap-5'>
               {
                 databars.map(cookItem=><Databar 
