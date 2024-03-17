@@ -13,7 +13,7 @@ const Databars = ({handelarAddCut}) => {
     },[])
     return (
       
-            <div className="">
+            <div className="body">
               <div className='grid grid-cols-1 md:grid-cols-2   gap-5'>
               {
                 databars.map(cookItem=><Databar 

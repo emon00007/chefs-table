@@ -5,7 +5,7 @@ const Databar = ({ cookItem,handelarAddCut }) => {
     
     return (
         <div >
-            <div className="card pt-5 card-compact bg-base-100 shadow-xl">
+            <div className="card body pt-5 card-compact bg-base-100 shadow-xl">
                 <figure><img className='h-96 w-96 rounded-xl ' src={recipe_image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{recipe_name}</h2>
@@ -25,7 +25,7 @@ const Databar = ({ cookItem,handelarAddCut }) => {
                     </div>
 
                     <div className="card-actions ">
-                        <button onClick={()=>handelarAddCut(cookItem)} className='bg-[#0BE58A] rounded-2xl p-2 '>Want to Cook</button>
+                        <button onClick={()=>handelarAddCut(cookItem)} className='hover:bg-slate-300 bg-[#0BE58A] rounded-2xl p-4 '>Want to Cook</button>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const Addtocut = ({ addtocat, index, handelarPreparing }) => {
 
   const { recipe_name, preparing_time, calories } = addtocat
@@ -7,7 +8,7 @@ const Addtocut = ({ addtocat, index, handelarPreparing }) => {
   return (
 
     <div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto body">
         <table className="table">
 
           <tbody>
@@ -25,5 +26,11 @@ const Addtocut = ({ addtocat, index, handelarPreparing }) => {
     </div>
   );
 };
+Addtocut.propTypes = {
+  handelarPreparing: PropTypes.func}
+Addtocut.propTypes = {
+  addtocat: PropTypes.object}
+Addtocut.propTypes = {
+  index: PropTypes.index}
 
 export default Addtocut;

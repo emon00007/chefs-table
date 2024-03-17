@@ -1,8 +1,9 @@
-const Cooking = ({cooking}) => {
+import PropTypes from 'prop-types';
+const Cooking = ({cooking,time,calories}) => {
     console.log(cooking)
     return (
         <div>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto body">
                 
                 <table className="table">
                     {/* head */}
@@ -27,11 +28,17 @@ const Cooking = ({cooking}) => {
                 </table>
             </div>
             <div className="mt-8 px-2 mx-auto border-b border-slate-300 max-w-md rounded-3xl flex justify-between py-4 ">
-                <h2> <span className='font-bold '>TotalTime=</span> {} minutes</h2>
-                <h2> <span className='font-bold '>Total Calories=</span> {} Calories</h2>
+                <h2> <span className='font-bold '>TotalTime=</span> {time} minutes</h2>
+                <h2> <span className='font-bold '>Total Calories=</span> {calories} Calories</h2>
             </div>
         </div>
     );
 };
+Cooking.propTypes = {
+    cooking: PropTypes.object}
+Cooking.propTypes = {
+    calories: PropTypes.object}
+Cooking.propTypes = {
+    time: PropTypes.object}
 
 export default Cooking;

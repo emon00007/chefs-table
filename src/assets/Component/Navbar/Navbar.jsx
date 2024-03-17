@@ -2,7 +2,7 @@ import { CgProfile } from "react-icons/cg";
 const Navbar = () => {
     return (
         <>
-            <div className="mx-7">
+            <div className="mx-7 body">
                 <div className="navbar bg-base-100">
                     <div className="navbar-start">
                         <div className="dropdown">
@@ -16,7 +16,7 @@ const Navbar = () => {
                             <li>Search</li>
                             </ul>
                         </div>
-                        <a className="btn btn-ghost text-4xl font-bold">Recipe Calories</a>
+                        <a className="btn btn-ghost md:text-4xl sm:text-2xl font-bold">Recipe Calories</a>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1 gap-7 ">
@@ -26,7 +26,7 @@ const Navbar = () => {
                             <li>Search</li>
                         </ul>
                     </div>
-                    <div className="navbar-end gap-8">
+                    <div className="navbar-end sm:gap-2 md:gap-8">
                         <div className="form-control">
                             <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
                         </div>

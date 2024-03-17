@@ -25,10 +25,19 @@ function App() {
     }
   }
   const [cooking, setCooking] = useState([])
+  const [time ,setTime ]= useState(0)
+  const [calories ,setCalories ]= useState(0)
   const handelarPreparing = (item) => {
     const remaining = addtocat.filter(i => i.recipe_id !== item.recipe_id)
     setAddtocat(remaining)
     setCooking([...cooking, item])
+     
+
+    const preparingTime = parseInt(item.preparing_time)
+       setTime(time+preparingTime)
+
+    const preparingCalories = parseInt(item.calories)
+       setCalories(time+preparingCalories)
   }
   // console.log(cooking)
   return (
@@ -41,11 +50,11 @@ function App() {
 
       <Recipes></Recipes>
 
-      <div className='grid grid-cols-1 md:grid-cols-5 gap-4'>
+      <div className='grid m-5  grid-cols-1 md:grid-cols-5 gap-4'>
         <div className='col-span-3'><Databars handelarAddCut={handelarAddCut}></Databars></div>
         <div className='col-span-2 border border-black'><SideBar handelarPreparing={handelarPreparing}  addtocat={addtocat}></SideBar>
-        <h1 className="text-3xl my-4 ">preapering to cook:{cooking.length} </h1>
-        <Cooking cooking={cooking}></Cooking></div>
+        <h1 className="text-3xl text-center my-4 ">preapering to cook:{cooking.length} </h1>
+        <Cooking time={time} calories={calories} cooking={cooking}></Cooking></div>
          
       </div>
 
