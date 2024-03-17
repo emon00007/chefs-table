@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import Addtocut from '../Addtocut/Addtocut';
 
-const SideBar = ({ addtocat }) => {
+
+
+
+const SideBar = ({ addtocat,handelarPreparing}) => {
 
     return (
-        <div className="1/3 text-center">
+        <div className="">
 
             <div className="overflow-x-auto">
                 <h1 className="text-3xl my-4 ">Want to cook:{addtocat.length} </h1>
@@ -18,14 +21,24 @@ const SideBar = ({ addtocat }) => {
                 </thead>
                 {
                     addtocat.map((addtocat,index)=>
-                    <Addtocut key={addtocat.id}
+                    <Addtocut handelarPreparing={handelarPreparing} key={index}
                     addtocat={addtocat} index={index} ></Addtocut>
                     )
                 }
+
+    
             </div>
+           
+            
+        
+            
         </div>
+        
+
     );
 };
+
+
 SideBar.propTypes = {
     addtocat: PropTypes.object
 }

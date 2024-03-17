@@ -10,39 +10,45 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './assets/Component/Navbar/Navbar'
 import Recipes from './assets/Component/Recipes/Recipes'
 import SideBar from './assets/Component/SideBar/SideBar'
+import Cooking from './assets/Component/Cookingfood/Cooking';
 
 
 function App() {
   const notify = () => toast("This foot cooking");
-  const [addtocat,setAddtocat]=useState([]);
-  const handelarAddCut = cookItem =>{
-    // const newAddtocat = [...addtocat,cookItem]
-    const isExists=addtocat.find(item=>item.recipe_id==cookItem.recipe_id)
-    // setAddtocat(newAddtocat)
-    if(!isExists){
-      setAddtocat([...addtocat,cookItem])
-    }else{
+  const [addtocat, setAddtocat] = useState([]);
+  const handelarAddCut = cookItem => {
+    const isExists = addtocat.find(item => item.recipe_id == cookItem.recipe_id)
+    if (!isExists) {
+      setAddtocat([...addtocat, cookItem])
+    } else {
       notify()
     }
   }
-
-  
-
+  const [cooking, setCooking] = useState([])
+  const handelarPreparing = (item) => {
+    const remaining = addtocat.filter(i => i.recipe_id !== item.recipe_id)
+    setAddtocat(remaining)
+    setCooking([...cooking, item])
+  }
+  // console.log(cooking)
   return (
     <>
-      
+
       <Navbar></Navbar>
 
-     <Banner></Banner>
-     <ToastContainer></ToastContainer>
-     
+      <Banner></Banner>
+      <ToastContainer></ToastContainer>
+
       <Recipes></Recipes>
-     
-     <div className='flex mx-7 gap-2'>
-     <Databars handelarAddCut={handelarAddCut}></Databars>
-      <SideBar addtocat={addtocat}></SideBar>
-     </div>
-     
+
+      <div className='grid grid-cols-1 md:grid-cols-5 gap-4'>
+        <div className='col-span-3'><Databars handelarAddCut={handelarAddCut}></Databars></div>
+        <div className='col-span-2 border border-black'><SideBar handelarPreparing={handelarPreparing}  addtocat={addtocat}></SideBar>
+        <h1 className="text-3xl my-4 ">preapering to cook:{cooking.length} </h1>
+        <Cooking cooking={cooking}></Cooking></div>
+         
+      </div>
+
     </>
   )
 }
