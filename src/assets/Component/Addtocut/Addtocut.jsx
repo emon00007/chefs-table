@@ -12,7 +12,7 @@ const Addtocut = ({ addtocat, index, handelarPreparing }) => {
         <table className="table">
 
           <tbody>
-            <tr className="hover">
+            <tr className="hover bg-slate-300  ">
               <th>{index + 1}</th>
               <td>{recipe_name}</td>
               <td>{preparing_time}</td>

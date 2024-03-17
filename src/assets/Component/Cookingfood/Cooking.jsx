@@ -15,7 +15,7 @@ const Cooking = ({cooking,time,calories}) => {
                             <th>Calories</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='bg-slate-300'>
                         {cooking.map((cook, idx) => (
                             <tr key={idx}>
                                 <th>{idx + 1}</th>
@@ -27,7 +27,7 @@ const Cooking = ({cooking,time,calories}) => {
                     </tbody>
                 </table>
             </div>
-            <div className="mt-8 px-2 mx-auto border-b border-slate-300 max-w-md rounded-3xl flex justify-between py-4 ">
+            <div className="mt-8 px-2 bg-slate-50 mx-auto border-b border-slate-300 max-w-md rounded-3xl flex justify-between py-6 ">
                 <h2> <span className='font-bold '>TotalTime=</span> {time} minutes</h2>
                 <h2> <span className='font-bold '>Total Calories=</span> {calories} Calories</h2>
             </div>

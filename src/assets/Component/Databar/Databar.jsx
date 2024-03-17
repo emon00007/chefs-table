@@ -5,14 +5,14 @@ const Databar = ({ cookItem,handelarAddCut }) => {
     
     return (
         <div >
-            <div className="card body pt-5 card-compact bg-base-100 shadow-xl">
+            <div className="card h-[800px] body pt-5 card-compact bg-base-100 shadow-xl">
                 <figure><img className='h-96 w-96 rounded-xl ' src={recipe_image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{recipe_name}</h2>
-                    <p>{short_description}</p>
+                    <p className='text-slate-600'>{short_description}</p>
                     <br />
-                    <h4>Ingredients:{ ingredients.length}</h4>
-                    <ul >
+                    <h4 className='text-xl font-semibold'>Ingredients:{ ingredients.length}</h4>
+                    <ul className='text-slate-600' >
                     
                     {
                     ingredients.map((ingred,ind )=><li key={ind}>-{ingred}</li>)
@@ -20,8 +20,8 @@ const Databar = ({ cookItem,handelarAddCut }) => {
                     </ul>
 
                     <div className='flex gap-5'>
-                        <h5>{preparing_time}</h5>
-                        <h5>{calories}</h5>
+                        <h5 className='text-slate-600'>{preparing_time}</h5>
+                        <h5 className='text-slate-600'>{calories}</h5>
                     </div>
 
                     <div className="card-actions ">
