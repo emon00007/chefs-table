@@ -37,7 +37,7 @@ function App() {
        setTime(time+preparingTime)
 
     const preparingCalories = parseInt(item.calories)
-       setCalories(time+preparingCalories)
+       setCalories(calories+preparingCalories)
   }
   // console.log(cooking)
   return (
